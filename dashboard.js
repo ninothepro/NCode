@@ -9,8 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Authorization': `token ${token}`
             }
         });
+
+        console.log(response);  // Log the response
+
         const files = await response.json();
         const fileList = document.getElementById('file-list');
+
+        console.log(files);  // Log the files
 
         fileList.innerHTML = '';
         files.forEach(file => {
@@ -28,6 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Authorization': `token ${token}`
             }
         });
+
+        console.log(response);  // Log the response
+
         const file = await response.json();
         const content = atob(file.content);
         document.getElementById('file-editor').value = content;
@@ -57,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         });
 
+        console.log(response);  // Log the response
+
         if (response.ok) {
             alert('File saved successfully.');
         } else {
@@ -83,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     content: encodedContent
                 })
             }).then(response => {
+                console.log(response);  // Log the response
                 if (response.ok) {
                     alert('File created successfully.');
                     fetchFiles();
