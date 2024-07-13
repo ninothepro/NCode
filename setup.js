@@ -1,7 +1,7 @@
 document.getElementById('setup-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const repoName = document.getElementById('repo-name').value;
-    const token = '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';  // Replace with your GitHub token
+    const token = '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';  // Replace with your GitHub token
 
     const response = await fetch('https://api.github.com/user/repos', {
         method: 'POST',
