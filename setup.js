@@ -19,6 +19,9 @@ document.getElementById('setup-form').addEventListener('submit', async (e) => {
     const result = await response.json();
     const messageElement = document.getElementById('message');
 
+    console.log(response);  // Log the response
+    console.log(result);    // Log the result
+
     if (response.ok) {
         messageElement.textContent = `Repository ${repoName} created successfully.`;
         window.location.href = `dashboard.html?repo=${repoName}`;
