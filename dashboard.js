@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const repoName = new URLSearchParams(window.location.search).get('repo');
-    const token = 'YOUR_GITHUB_TOKEN';  // Replace with your GitHub token
+    const token = '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';  // Replace with your GitHub token
 
     // Fetch files in the repository
     async function fetchFiles() {
-        const response = await fetch(`https://api.github.com/repos/YOUR_USERNAME/${repoName}/contents`, {
+        const response = await fetch(`https://api.github.com/repos/ninothepro/${repoName}/contents`, {
             headers: {
                 'Authorization': `token ${token}`
             }
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load file content
     async function loadFile(path) {
-        const response = await fetch(`https://api.github.com/repos/YOUR_USERNAME/${repoName}/contents/${path}`, {
+        const response = await fetch(`https://api.github.com/repos/ninothepro/${repoName}/contents/${path}`, {
             headers: {
                 'Authorization': `token ${token}`
             }
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const content = document.getElementById('file-editor').value;
         const encodedContent = btoa(content);
 
-        const response = await fetch(`https://api.github.com/repos/YOUR_USERNAME/${repoName}/contents/${path}`, {
+        const response = await fetch(`https://api.github.com/repos/ninothepro/${repoName}/contents/${path}`, {
             method: 'PUT',
             headers: {
                 'Authorization': `token ${token}`,
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify({
                 message: 'Update file',
                 content: encodedContent,
-                sha: (await fetch(`https://api.github.com/repos/YOUR_USERNAME/${repoName}/contents/${path}`, {
+                sha: (await fetch(`https://api.github.com/repos/ninothepro/${repoName}/contents/${path}`, {
                     headers: {
                         'Authorization': `token ${token}`
                     }
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const content = '';
             const encodedContent = btoa(content);
 
-            fetch(`https://api.github.com/repos/YOUR_USERNAME/${repoName}/contents/${filePath}`, {
+            fetch(`https://api.github.com/repos/ninothepro/${repoName}/contents/${filePath}`, {
                 method: 'PUT',
                 headers: {
                     'Authorization': `token ${token}`,
