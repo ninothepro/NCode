@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const repoName = new URLSearchParams(window.location.search).get('repo');
-    const token = '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';  // Replace with your GitHub token
+    const token = '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';  // Replace with your GitHub token
 
     // Fetch files in the repository
     async function fetchFiles() {
